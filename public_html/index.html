@@ -14,152 +14,154 @@ and open the template in the editor.
         <link rel="icon" type="image/png" href="images/logo.png" />
     </head>
     <body>
-        <table  id="main_table">
-                        <tr>
-                            <th>
-                                Update Time
-                            </th>
+        <div id="main_body">
+            <table  id="main_table">
+                            <tr>
+                                <th>
+                                    Update Time
+                                </th>
 
-                            <th>
-                                Update Status
-                            </th>
-
-
-                        </tr>
-                        <tr>
-                            <td>
-
-                            <label for="time">Starting Time:</label>
-                            <input type="text" id="time" name="time" value="0"><br>
-                            <button type="button" name="timer" onclick="">Start Timer</button><br/>
-
-                            <td>
-                                <label >Fixture Status:</label>
-                                <select id="status" size="1">
-                                    <option value="1">LIVE</option>
-                                    <option value="2">FT</option>
-                                    <option value="3">HT</option>
-                                    <option value="4">POSTP</option>
-                                </select><br/>
-                                <button type="button" name="status_button" onclick="">Update Status!</button><br/>
-                            </td>      
-
-                        </tr>
-
-                        <tr>
-                            <th>
-                                Event Type
-                            </th>
-
-                            <th>
-                                Rating Input
-                            </th>
+                                <th>
+                                    Update Status
+                                </th>
 
 
-                        </tr>
+                            </tr>
+                            <tr>
+                                <td>
 
-                        <tr>
-                            <td>
-                                <label >Event:</label>
-                                <select id="event" size="1">
-                                    <option value="1">goal</option>
-                                    <option value="2">substitution</option>
-                                    <option value="3">yellowcard</option>
-                                    <option value="4">redcard</option>
-                                    <option value="5">penalty</option>
-                                    <option value="6">missed_penalty</option>
-                                    <option value="7">own-goal</option>
-                                    <option value="8">yellowred</option>
-                                    <option value="9">pen_shootout_miss</option>
-                                    <option value="10">pen_shootout_goal</option>
-                                </select><br/>
+                                <label for="time">Starting Time:</label>
+                                <input type="text" id="time" name="time" value="0"><br>
+                                <button type="button" name="timer" onclick="">Start Timer</button><br/>
 
-                            </td>
+                                <td>
+                                    <label >Fixture Status:</label>
+                                    <select id="status" size="1">
+                                        <option value="1">LIVE</option>
+                                        <option value="2">FT</option>
+                                        <option value="3">HT</option>
+                                        <option value="4">POSTP</option>
+                                    </select><br/>
+                                    <button type="button" name="status_button" onclick="">Update Status!</button><br/>
+                                </td>      
 
-                            <td>
-                                <label for="rating">Rating:</label>
-                                <input type="text" id="rating"  value="5"><br>
-                                <label for="user">User Id:</label>
-                                <input type="text" id="user"  value="11"><br>
-                            </td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    Event Type
+                                </th>
+
+                                <th>
+                                    Rating Input
+                                </th>
 
 
-                        </tr>
-                        <tr>
-                            <th>
-                               Home Team
-                            </th>
+                            </tr>
 
-                            <th>
-                                Away Team
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>Players</label>
-                                <select class="players1" ></select>
-                            </td>
+                            <tr>
+                                <td>
+                                    <label >Event:</label>
+                                    <select id="event" size="1">
+                                        <option value="1">goal</option>
+                                        <option value="2">substitution</option>
+                                        <option value="3">yellowcard</option>
+                                        <option value="4">redcard</option>
+                                        <option value="5">penalty</option>
+                                        <option value="6">missed_penalty</option>
+                                        <option value="7">own-goal</option>
+                                        <option value="8">yellowred</option>
+                                        <option value="9">pen_shootout_miss</option>
+                                        <option value="10">pen_shootout_goal</option>
+                                    </select><br/>
 
-                            <td>
-                                <label>Players</label>
-                                <select class="players2"></select>
-                            </td>
+                                </td>
 
-                        </tr>
+                                <td>
+                                    <label for="rating">Rating:</label>
+                                    <input type="text" id="rating"  value="5"><br>
+                                    <label for="user">User Id:</label>
+                                    <input type="text" id="user"  value="11"><br>
+                                </td>
 
-                        <tr>
-                            <td>
-                                <label>Related Players</label>
-                                <select class="players1"></select>
-                            </td>
 
-                            <td>
-                                <label>Related Players</label>
-                                <select class="players2"></select><br/>
-                            </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                   Home Team
+                                </th>
 
-                        </tr>
+                                <th>
+                                    Away Team
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Players</label>
+                                    <select class="players1" ></select>
+                                </td>
 
-                        <tr>
-                            <td>
-                                <button type="button" name="status_button" onclick="">Home Event!</button>
-                            </td>
+                                <td>
+                                    <label>Players</label>
+                                    <select class="players2"></select>
+                                </td>
 
-                            <td>
-                                <button type="button" name="status_button" onclick=""> Away Event!</button>
-                            </td>
-                        </tr>
+                            </tr>
 
-                        <tr>
-                            <td>
-                                <button type="button" name="fixutre_id_button" onclick="">Add Home Rating!</button>
-                            </td>
+                            <tr>
+                                <td>
+                                    <label>Related Players</label>
+                                    <select class="players1"></select>
+                                </td>
 
-                            <td>
-                                <button type="button" name="fixutre_id_button" onclick="">Add Away Rating!</button>
-                            </td>
+                                <td>
+                                    <label>Related Players</label>
+                                    <select class="players2"></select><br/>
+                                </td>
 
-                        </tr>
+                            </tr>
 
-                        <tr>
-                            <td>
-                                <button type="button" name="fixutre_id_button" onclick="">Add Score!</button>
+                            <tr>
+                                <td>
+                                    <button type="button" name="status_button" onclick="">Home Event!</button>
+                                </td>
 
-                            </td>
+                                <td>
+                                    <button type="button" name="status_button" onclick=""> Away Event!</button>
+                                </td>
+                            </tr>
 
-                            <td>
-                                <button type="button" name="fixutre_id_button" onclick="">Add Score!</button>                    
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button type="button" name="fixutre_id_button" onclick="">Minus Score!</button>
-                            </td>
+                            <tr>
+                                <td>
+                                    <button type="button" name="fixutre_id_button" onclick="">Add Home Rating!</button>
+                                </td>
 
-                            <td>
-                                <button type="button" name="fixutre_id_button" onclick="">Minus Score!</button>
-                            </td>
-                        </tr>
-                      </table>
+                                <td>
+                                    <button type="button" name="fixutre_id_button" onclick="">Add Away Rating!</button>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <button type="button" name="fixutre_id_button" onclick="">Add Score!</button>
+
+                                </td>
+
+                                <td>
+                                    <button type="button" name="fixutre_id_button" onclick="">Add Score!</button>                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button type="button" name="fixutre_id_button" onclick="">Minus Score!</button>
+                                </td>
+
+                                <td>
+                                    <button type="button" name="fixutre_id_button" onclick="">Minus Score!</button>
+                                </td>
+                            </tr>
+                          </table>
+        </div>
     </body>
 </html>
