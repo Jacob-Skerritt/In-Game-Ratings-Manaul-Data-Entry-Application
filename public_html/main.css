@@ -72,6 +72,13 @@ th{
     position:absolute;
     left:40%;
     top:34%;
-    text-align:center;
+    text-align:center;  
+}
+
+#time_display{
     
+    position:absolute;
+    left:47.5%;
+    top:30%;
+    font-size:1.5vw;
 }
