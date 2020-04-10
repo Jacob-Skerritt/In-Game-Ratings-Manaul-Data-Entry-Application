@@ -1,0 +1,147 @@
+
+html{
+    height: 100%;
+}
+
+body{
+  background-color: #013A6B;
+  background-image: -webkit-linear-gradient(30deg, #FF8A33 50%, #33E6FF 50%);
+  height: 100%
+}
+h1{
+    position:relative; 
+    font-size:2vw;
+    text-align:center;  
+    
+}
+
+select{
+    max-width:100px;
+}
+
+input{
+    width:35%;
+}
+
+table {
+  border-collapse: collapse;
+  background-color:white;
+  width: 10%;
+  
+}
+
+table, th, td,tr {
+  border: 2px solid black;
+  padding:2px;
+  width: 20%;
+}
+td{
+    text-align:center;
+
+}
+
+th{
+    background-color:black;
+    color:white;
+}
+
+#main_body{
+    position:relative;    
+    left:10%;
+    width:80%;
+    height: 95%;
+          
+}
+
+#main_table{
+    visibility: hidden;
+    position:absolute; 
+    width:45%;
+    left:27%;
+    top:44%;
+}
+
+#logo{
+    width:15%;
+    position:absolute;
+    left:42%;
+    top:5%;
+}
+
+#fixture_display{
+    position:absolute;
+    left:40%;
+    top:34%;
+    text-align:center;  
+}
+
+#time_display{
+    
+    position:absolute;
+    left:47.5%;
+    top:30%;
+    font-size:1.5vw;
+}
+
+#home_table{
+    visibility: hidden;
+    position:absolute; 
+    width:15%;
+    height:5%;
+    left:5%;
+    top:34%;
+    font-size:1.1vw;
+}
+
+#away_table{
+    visibility: hidden;
+    position:absolute; 
+    width:15%;
+    height:5%;
+    left:77.5%;
+    top:34%;
+    font-size:1.1vw;
+
+}
+
+#home_table td{
+    overflow:hidden;
+    text-align:left;
+    white-space:nowrap;
+
+}
+
+#away_table td{
+    overflow:hidden;
+    text-align:left;
+    white-space:nowrap;
+}
+
+.header{
+    background-color:black;
+    color:white;
+
+}
+
+#home_display{
+    position:absolute;
+    left:5.5%;
+    top:10%;
+    text-align:center;
+    font-size:1.5vw;
+}
+
+#away_display{
+    position:absolute;
+    left:78%;
+    top:10%;
+    text-align:center;
+    font-size:1.5vw;
+}
+
+#home_display img{
+    width:60%;
+}
+#away_display img{
+    width:60%;
+}

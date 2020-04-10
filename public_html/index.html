@@ -6,11 +6,196 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <script type="text/javascript" src="main.js"></script>
+        <title>In-Game Ratings Manual Data Input Application</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <link rel="icon" type="image/png" href="images/logo.png" />
     </head>
     <body>
-        <div>TODO write content</div>
+        <div id="main_body">
+            <h1> In-Game Ratings Manual Data Entry Application </h1>
+            <img src="images/logo.png" alt="My test image" id="logo">
+            
+            
+            <div id="home_display">
+                <img src="" alt="home team logo" id="home_logo"><br/>
+                <span id="home_name"></span><br>
+                <span id="home_score"></span>
+            </div>
+
+            <div id="away_display">
+                <img src="" alt="away team logo" id="away_logo"><br/>
+                <span id="away_name"></span><br/>
+                <span id="away_score"></span>
+            </div>
+            
+            
+            <table id="home_table">
+                
+            </table>
+            
+            <table id="away_table">
+                
+            </table>
+            
+            
+             <div id="fixture_display">
+                <label for="fixture_id">Fixture ID:</label>
+                <input type="text" id="fixture_id" name="fixture_id" value="11867481"><br/>
+                <button type="button" name="fixutre_id_button" onclick="getFixtureData()">Get Fixture Data!</button><br/>
+            </div>
+            
+            <div id="time_display"><span id="time_output">00:00</span></div>
+            
+            <table  id="main_table">
+                            <tr>
+                                <th>
+                                    Update Time
+                                </th>
+
+                                <th>
+                                    Update Status
+                                </th>
+
+
+                            </tr>
+                            <tr>
+                                <td>
+
+                                <label for="time">Starting Time:</label>
+                                <input type="text" id="time" name="time" value="0"><br>
+                                <button type="button" name="timer" onclick="startTimer()">Start Timer</button><br/>
+
+                                <td>
+                                    <label >Fixture Status:</label>
+                                    <select id="status" size="1">
+                                        <option value="1">LIVE</option>
+                                        <option value="2">FT</option>
+                                        <option value="3">HT</option>
+                                        <option value="4">POSTP</option>
+                                    </select><br/>
+                                    <button type="button" name="status_button" onclick="changeStatus()">Update Status!</button><br/>
+                                </td>      
+
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    Event Type
+                                </th>
+
+                                <th>
+                                    Rating Input
+                                </th>
+
+
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label >Event:</label>
+                                    <select id="event" size="1">
+                                        <option value="1">goal</option>
+                                        <option value="2">substitution</option>
+                                        <option value="3">yellowcard</option>
+                                        <option value="4">redcard</option>
+                                        <option value="5">penalty</option>
+                                        <option value="6">missed_penalty</option>
+                                        <option value="7">own-goal</option>
+                                        <option value="8">yellowred</option>
+                                        <option value="9">pen_shootout_miss</option>
+                                        <option value="10">pen_shootout_goal</option>
+                                    </select><br/>
+
+                                </td>
+
+                                <td>
+                                    <label for="rating">Rating:</label>
+                                    <input type="text" id="rating"  value="5"><br>
+                                    <label for="user">User Id:</label>
+                                    <input type="text" id="user"  value="11"><br>
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th>
+                                   Home Team
+                                </th>
+
+                                <th>
+                                    Away Team
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Players</label>
+                                    <select class="players1" ></select>
+                                </td>
+
+                                <td>
+                                    <label>Players</label>
+                                    <select class="players2"></select>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label>Related Players</label>
+                                    <select class="players1"></select>
+                                </td>
+
+                                <td>
+                                    <label>Related Players</label>
+                                    <select class="players2"></select><br/>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <button type="button" name="status_button" onclick="startEvent(team1,0)">Home Event!</button>
+                                </td>
+
+                                <td>
+                                    <button type="button" name="status_button" onclick="startEvent(team2,1)"> Away Event!</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <button type="button" name="fixutre_id_button" onclick="addRating(0)">Add Home Rating!</button>
+                                </td>
+
+                                <td>
+                                    <button type="button" name="fixutre_id_button" onclick="addRating(1)">Add Away Rating!</button>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <button type="button" name="fixutre_id_button" onclick="addGoal(team1.team_id)">Add Score!</button>
+
+                                </td>
+
+                                <td>
+                                    <button type="button" name="fixutre_id_button" onclick="addGoal(team2.team_id)">Add Score!</button>                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button type="button" name="fixutre_id_button" onclick="removeGoal(team1.team_id)">Minus Score!</button>
+                                </td>
+
+                                <td>
+                                    <button type="button" name="fixutre_id_button" onclick="removeGoal(team2.team_id)">Minus Score!</button>
+                                </td>
+                            </tr>
+                          </table>
+        </div>
     </body>
 </html>
