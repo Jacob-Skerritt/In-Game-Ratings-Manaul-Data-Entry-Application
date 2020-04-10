@@ -70,5 +70,21 @@
             
         }, 1000);
     }
+    
+        function changeStatus() {
+
+        var e = document.getElementById("status");
+        var status = e.options[e.selectedIndex].text;
+
+        fetch('http://mysql03.comp.dkit.ie/D00196117/in_game_ratings_api/fixture/updateStatus.php', {
+        method:'post',
+        header: {
+          'Accept' : 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({id: id, fixture_status: status})
+        });
+        getFixtureData();
+    }
 
 
