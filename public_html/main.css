@@ -2,6 +2,12 @@
 html{
     height: 100%;
 }
+
+body{
+  background-color: #013A6B;
+  background-image: -webkit-linear-gradient(30deg, #FF8A33 50%, #33E6FF 50%);
+  height: 100%
+}
 h1{
     position:relative; 
     font-size:2vw;
@@ -45,4 +51,19 @@ th{
     width:80%;
     height: 95%;
           
+}
+
+#main_table{
+    visibility: visible;
+    position:absolute; 
+    width:45%;
+    left:27%;
+    top:44%;
+}
+
+#logo{
+    width:15%;
+    position:absolute;
+    left:42%;
+    top:5%;
 }
