@@ -207,5 +207,33 @@
             .then(data => addEvent(team_id, team, data));
 
     }
+    
+        function addRating(team){
+        var user = document.getElementById("user").value;
+        var rating = document.getElementById("rating").value;
+        
+        var player_id;
+        var e2 = document.getElementsByClassName("players1");
+        var e3 = document.getElementsByClassName("players2");
+        if(team == 0){
+            player_id = e2[0].options[e2[0].selectedIndex].value;
+        }else{
+            player_id = e3[0].options[e3[0].selectedIndex].value;
+        }
+        
+        
+        
+        fetch('http://mysql03.comp.dkit.ie/D00196117/in_game_ratings_api/rating/add_rating.php', {
+                method:'post',
+                header: {
+                  'Accept' : 'application/json, text/plain, */*',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({fixture_id: id, player_id:player_id, account_id:user, rating:rating})
+                }).then(response => response.json())
+                    .then(data =>getFixtureData());
+                
+        
+    }
 
 
