@@ -24,6 +24,25 @@
         }
         main_table.style.visibility='visible';
         loadPlayers();
+        
+                document.getElementById("home_logo").src = team1.logo;
+        document.getElementById("home_name").textContent= team1.team_name;
+        document.getElementById("home_score").textContent= team1.score;
+        
+        document.getElementById("away_logo").src = team2.logo;
+        document.getElementById("away_name").textContent= team2.team_name;
+        document.getElementById("away_score").textContent= team2.score;
+        
+        var tab = document.getElementById("home_table");
+        var tab2 = document.getElementById("away_table");
+        //or use :  var table = document.all.tableid;
+        for(var i = tab.rows.length - 1; i >= 0; i--)
+        {
+            tab.deleteRow(i);
+            tab2.deleteRow(i);
+        
+        }
+        table();
 
 
     }
@@ -235,5 +254,102 @@
                 
         
     }
+    
+        function table(){
+                // Find a <table> element with id="myTable":
+        var table = document.getElementById("home_table");
+        var table2 = document.getElementById("away_table");
+        
+        var i = 1;
+        
+        
+        var header = table.createTHead();
+        var rowHeader = header.insertRow(i-1);
+        var hCell1 = rowHeader.insertCell(0);
+        var hCell2 = rowHeader.insertCell(1);
+        var hCell3 = rowHeader.insertCell(2);
+        
+        hCell1.innerHTML = "#";
+        hCell2.innerHTML = "Player Name";
+        hCell3.innerHTML = "R";
+        
+        hCell1.className = "header";
+        hCell2.className = "header";
+        hCell3.className = "header";
+        
+        
+        var header2 = table2.createTHead();
+        var rowHeader2 = header2.insertRow(i-1);
+        var hCell4 = rowHeader2.insertCell(0);
+        var hCell5 = rowHeader2.insertCell(1);
+        var hCell6 = rowHeader2.insertCell(2);
+        hCell4.innerHTML = "#";
+        hCell5.innerHTML = "Player Name";
+        hCell6.innerHTML = "R";
+        
+        hCell4.className = "header";
+        hCell5.className = "header";
+        hCell6.className = "header";
+        while (i < 12) {
+            
+            var name;
+            var hold;
+            var rating;
+            for(index in team1.players){
+                if(team1.players[index].formation_position == i){
+                    hold = team1.players[index].player_name;
+                    name = hold.substring(0,15);
+                    rating = team1.players[index].avg_rating;
+                    
+                }
+            }
+        
+        
+        
+        var row = table.insertRow(i);
+        
+        var row2 = table2.insertRow(i);
+        var header2 = table.createTHead();
+
+        // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        
+        
+        
+           // Add some text to the new cells:
+        cell1.innerHTML = i;
+        cell2.innerHTML = name;
+        cell3.innerHTML = rating;
+        
+         for(index in team2.players){
+                if(team2.players[index].formation_position == i){
+                    hold = team2.players[index].player_name;
+                    name = hold.substring(0,15);
+                    rating = team2.players[index].avg_rating;
+                    
+                }
+            }
+        
+        var cell4 = row2.insertCell(0);
+        var cell5 = row2.insertCell(1);
+        var cell6 = row2.insertCell(2);
+
+     
+        
+        cell4.innerHTML = i;
+        cell5.innerHTML = name;
+        cell6.innerHTML = rating;
+        i++;
+      }
+      
+      home_table.style.visibility='visible';
+      away_table.style.visibility='visible';
+
+        // Create an empty <tr> element and add it to the 1st position of the table:
+
+    }
+
 
 
