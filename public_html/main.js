@@ -22,8 +22,27 @@
         }else{
             alert("please enter a fixture id");
         }
+        main_table.style.visibility='visible';
+        loadPlayers();
 
 
+    }
+    
+        function loadPlayers(){
+
+        var select = document.getElementsByClassName("players1");
+        for(index in team1.players){
+           select[0].options[select[0].options.length] = new Option(team1.players[index].player_name, team1.players[index].player_id);
+           select[1].options[select[1].options.length] = new Option(team1.players[index].player_name, team1.players[index].player_id);
+        }
+
+        var select = document.getElementsByClassName("players2");
+        for(index in team2.players){
+           select[0].options[select[0].options.length] = new Option(team2.players[index].player_name, team2.players[index].player_id);
+           select[1].options[select[1].options.length] = new Option(team2.players[index].player_name, team2.players[index].player_id);
+        }
+
+       
     }
 
 

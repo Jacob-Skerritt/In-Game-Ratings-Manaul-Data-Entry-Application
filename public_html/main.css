@@ -54,7 +54,7 @@ th{
 }
 
 #main_table{
-    visibility: visible;
+    visibility: hidden;
     position:absolute; 
     width:45%;
     left:27%;
