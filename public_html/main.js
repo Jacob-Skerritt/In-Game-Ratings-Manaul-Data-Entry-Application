@@ -113,5 +113,99 @@
           .then(data =>getFixtureData());
         
     }
+    
+    
+        async function addEvent(t_id, team, new_id) {
+        
+        
+        var e = document.getElementById("event");
+        var event_id = e.options[e.selectedIndex].value;
+
+        var e2 = document.getElementsByClassName("players1");
+        var e3 = document.getElementsByClassName("players2");
+        
+        var player_id;
+        var related_player_id;
+        
+        if(t_id == 0){
+            player_id = e2[0].options[e2[0].selectedIndex].value;
+            related_player_id = e2[1].options[e2[1].selectedIndex].value;
+        }else{
+            player_id = e3[0].options[e3[0].selectedIndex].value;
+            related_player_id = e3[1].options[e3[1].selectedIndex].value;
+        }
+        
+        
+        
+        if(event_id == 2){
+            var player_position;
+            var related_player_position;
+            for(index in team.players){
+                
+                if(player_id == team.players[index].player_id){
+                    player_position = team.players[index].formation_position;
+                }
+                    
+                
+               
+                if(related_player_id == team.players[index].player_id){
+                    related_player_position = team.players[index].formation_position;
+                }
+            
+            }
+            
+            changePosition(id,related_player_position,player_id);
+            changePosition(id,player_position,related_player_id);
+            getFixtureData();
+            
+            
+        }
+        
+        
+
+        await fetch('http://mysql03.comp.dkit.ie/D00196117/in_game_ratings_api/fixture_event/create.php', {
+        method:'post',
+        header: {
+          'Accept' : 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({id:new_id,fixture_id: id, event_id: event_id, team_id:team.team_id, player_id:player_id, related_player_id:related_player_id, minute:1})
+        });
+        
+        if(event_id == 1){
+            addGoal(team.team_id);
+        }
+        
+        if(event_id == 7){
+            if(t_id == 0){
+                addGoal(team2.team_id);
+            }else{
+                addGoal(team1.team_id);
+            }
+        }
+
+    }
+    
+    function changePosition(id, position, p_id){
+        fetch('http://mysql03.comp.dkit.ie/D00196117/in_game_ratings_api/fixture_player/updatePosition.php', {
+        method:'post',
+        header: {
+          'Accept' : 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({fixture_id: id, formation_position:position, player_id:p_id})
+        }).then(response => response.json())
+          .then(data =>getFixtureData());
+        
+    
+    }
+    
+    async function startEvent(team, team_id){
+
+        await fetch('http://mysql03.comp.dkit.ie/D00196117/in_game_ratings_api/fixture_event/count_events.php ')
+            .then(response => response.json())
+            .then(data => addEvent(team_id, team, data));
+
+    }
 
 
