@@ -25,6 +25,7 @@ and open the template in the editor.
                 <button type="button" name="fixutre_id_button" onclick="getFixtureData()">Get Fixture Data!</button><br/>
             </div>
             
+            <div id="time_display"><span id="time_output">00:00</span></div>
             
             <table  id="main_table">
                             <tr>
@@ -43,7 +44,7 @@ and open the template in the editor.
 
                                 <label for="time">Starting Time:</label>
                                 <input type="text" id="time" name="time" value="0"><br>
-                                <button type="button" name="timer" onclick="">Start Timer</button><br/>
+                                <button type="button" name="timer" onclick="startTimer()">Start Timer</button><br/>
 
                                 <td>
                                     <label >Fixture Status:</label>

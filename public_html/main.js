@@ -44,5 +44,31 @@
 
        
     }
+    
+        function startTimer() {
+        var start_time = document.getElementById("time").value;
+        var timer = start_time, minutes, seconds;
+        var display = document.querySelector('#time_output');
+        setInterval(function () {
+            
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+            minutes = minutes < 10 ? "0" + minutes : minutes;;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.textContent = minutes + ":" + seconds;
+            ++timer;
+            
+            fetch('http://mysql03.comp.dkit.ie/D00196117/in_game_ratings_api/fixture/updateTime.php', {
+                method:'post',
+                header: {
+                  'Accept' : 'application/json, text/plain, */*',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({id: id, time_minute:minutes, time_second:seconds})
+                });
+            
+        }, 1000);
+    }
 
 
