@@ -86,5 +86,32 @@
         });
         getFixtureData();
     }
+    
+        async function addGoal(team_id) {
+
+        await fetch('http://mysql03.comp.dkit.ie/D00196117/in_game_ratings_api/fixture_team/add_goal.php', {
+        method:'post',
+        header: {
+          'Accept' : 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({fixture_id: id, team_id: team_id})
+        }).then(response => console.log(response.json()))
+          .then(data =>getFixtureData());
+    }
+
+    async function removeGoal(team_id) {
+
+       await fetch('http://mysql03.comp.dkit.ie/D00196117/in_game_ratings_api/fixture_team/remove_goal.php', {
+        method:'post',
+        header: {
+          'Accept' : 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({fixture_id: id, team_id: team_id})
+        }).then(response => response.json())
+          .then(data =>getFixtureData());
+        
+    }
 
 
