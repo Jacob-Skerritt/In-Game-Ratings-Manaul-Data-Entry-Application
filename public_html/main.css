@@ -67,3 +67,11 @@ th{
     left:42%;
     top:5%;
 }
+
+#fixture_display{
+    position:absolute;
+    left:40%;
+    top:34%;
+    text-align:center;
+    
+}
