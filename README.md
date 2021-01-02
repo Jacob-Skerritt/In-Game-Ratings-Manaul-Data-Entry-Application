@@ -1,4 +1,4 @@
-# In-Game-Ratings-Manaul-Data-Entry-Application
+# In-Game-Ratings-Manual-Data-Entry-Application
 An application to allow the manual entry of data for a specified fixture
 
 ## Description
